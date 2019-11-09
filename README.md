@@ -18,4 +18,4 @@ Now that you know something about each other, you need to decide what final proj
 
 Submission instructions
 
-You will have to present the results of team bonding on Thursday. The deadline posted here is just a suggestion.
+You will have to present the results of team bonding on Thursday. The deadline posted here is just a suggestion
