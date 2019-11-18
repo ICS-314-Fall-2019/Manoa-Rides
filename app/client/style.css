@@ -1,0 +1,6 @@
+.background_landing{
+  background-size: cover;
+  background-image: url('/images/Background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
