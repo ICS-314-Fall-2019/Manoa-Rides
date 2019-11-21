@@ -11,7 +11,7 @@ class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', firstName: '', lastName: '', password: '', error: '', redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -43,18 +43,32 @@ class Signup extends React.Component {
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
-              Register your account
+              Sign - Up
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
-                  label="Email"
+                  label="UH Email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="UH E-mail address"
                   onChange={this.handleChange}
+                />
+                <Form.Input
+                    label="First Name"
+                    name="First Name"
+                    type="firstName"
+                    placeholder="Enter First Name"
+                    onChange={this.handleChange}
+                />
+                <Form.Input
+                    label="Last Name"
+                    name="Last Name"
+                    type="lastName"
+                    placeholder="Enter Last Name"
+                    onChange={this.handleChange}
                 />
                 <Form.Input
                   label="Password"
