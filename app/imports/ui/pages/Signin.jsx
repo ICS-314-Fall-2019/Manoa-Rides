@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Input } from 'semantic-ui-react';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -46,34 +46,38 @@ export default class Signin extends React.Component {
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
-              Login to your account
+              Sign-In
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
-                <Form.Input
-                  label="Email"
-                  icon="user"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
-                  label="Password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
-                />
-                <Form.Button content="Submit"/>
+                <Form.Field>
+                  <Input
+                      label={{ basic: true, content: 'Email' }}
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                      onChange={this.handleChange}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <Input
+                      label={{ basic: true, content: 'Password' }}
+                      name="password"
+                      placeholder="Enter password"
+                      type="password"
+                      onChange={this.handleChange}
+                  />
+                </Form.Field>
+                <Form.Button content="Submit" className='submit-button'/>
+                <span className='forgot-text'>
+                  <Link to="/signup">Click here to Register</Link>
+                  <span>
+                    <Link to="/forgotPass">Forgot Password</Link>
+                  </span>
+                </span>
+                <br/>
               </Segment>
             </Form>
-            <Message>
-              <Link to="/signup">Click here to Register</Link>
-            </Message>
             {this.state.error === '' ? (
               ''
             ) : (

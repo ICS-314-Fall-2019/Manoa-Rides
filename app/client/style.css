@@ -1,3 +1,26 @@
 .uhber-background{
   font-size: 50px;
 }
+
+.forgot-text {
+  display: table;
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.forgot-text span {
+  display: table-cell;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+/*.submit-button .ui.button {*/
+/*  background-color: #024731;*/
+/*  color: #fff;*/
+/*  font-weight: 400;*/
+/*}*/
+
