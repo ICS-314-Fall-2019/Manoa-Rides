@@ -39,6 +39,7 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
+        <div className='signUpBackground'>
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
@@ -56,6 +57,8 @@ class Signup extends React.Component {
                   placeholder="UH E-mail address"
                   onChange={this.handleChange}
                 />
+                <Grid columns='equal'>
+                  <Grid.Column>
                 <Form.Input
                     label="First Name"
                     name="First Name"
@@ -63,6 +66,8 @@ class Signup extends React.Component {
                     placeholder="Enter First Name"
                     onChange={this.handleChange}
                 />
+                  </Grid.Column>
+                    <Grid.Column>
                 <Form.Input
                     label="Last Name"
                     name="Last Name"
@@ -70,6 +75,8 @@ class Signup extends React.Component {
                     placeholder="Enter Last Name"
                     onChange={this.handleChange}
                 />
+                  </Grid.Column>
+                </Grid>
                 <Form.Input
                   label="Password"
                   icon="lock"
@@ -79,6 +86,7 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
+
                 <Form.Button content="Submit"/>
               </Segment>
             </Form>
@@ -97,6 +105,7 @@ class Signup extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+        </div>
     );
   }
 }
