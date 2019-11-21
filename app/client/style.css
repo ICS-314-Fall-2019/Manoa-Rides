@@ -1,3 +1,6 @@
+.uhber-background{
+  font-size: 50px;
+}
 .signUpBackground{
   background: url('images/signUpBackground.png') no-repeat center center fixed;
   background-size: cover;
