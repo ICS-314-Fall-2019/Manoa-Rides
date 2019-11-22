@@ -1,7 +1,25 @@
 .uhber-background{
   font-size: 50px;
 }
+
 .signUpBackground{
   background: url('images/signUpBackground.png') no-repeat center center fixed;
   background-size: cover;
 }
+
+.forgot-text {
+  display: table;
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.forgot-text span {
+  display: table-cell;
+}
+
+.submit-button {
+  text-align: center;
+}
+
