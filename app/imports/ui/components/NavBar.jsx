@@ -30,7 +30,8 @@ class NavBar extends React.Component {
         </Grid>
 
         {this.props.currentUser ? (
-            [<Menu.Item position="right" icon={'calendar alternate outline'} as={NavLink} activeClassName="active" exact to="/" key=''>
+            [<Menu.Item position="right" icon={'calendar alternate outline'}
+                        as={NavLink} activeClassName="active" exact to="/" key=''>
               <Icon name={'calendar alternate outline'} size='large'/>Calendar</Menu.Item>]
         ) : ''}
 
