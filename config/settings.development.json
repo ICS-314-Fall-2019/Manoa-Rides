@@ -10,7 +10,7 @@
       "password": "changeme" }
   ],
 
-  "defaultContacts": [
+  "defaultProfiles": [
     {
       "firstName": "Philip",
       "lastName": "Johnson",

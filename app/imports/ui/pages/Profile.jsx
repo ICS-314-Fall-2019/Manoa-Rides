@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from 'react-avatar';
 import { Grid, Container, Image, Menu, Item, Header, Segment } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -27,12 +26,12 @@ class Profile extends React.Component {
     return (
         <Container>
           <Grid divided='vertically'>
-            <Grid.Row columns={2}>
+            <Grid.Row columns={2} border={0}>
               <Grid.Column>
                 <Grid.Row centered columns={4}>
-                  <Header as="h2" textAlign="center">Create Your Ride</Header>
+                  <Header as="h2" textAlign="center">Edit Profile</Header>
                   <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
-                    <Segment>
+                    <Segment border={0}>
                       <TextField name='name'/>
                       <NumField name='quantity' decimal={false}/>
                       <SelectField name='condition'/>
@@ -43,7 +42,7 @@ class Profile extends React.Component {
                 </Grid.Row>
               </Grid.Column>
               <Grid.Column textAlign='right' divided = {0}>
-                <Menu fluid vertical>
+                <Menu fluid vertical inverted>
                   <Avatar skypeId="sitebase" size="200" />
                 </Menu>
               </Grid.Column>

@@ -24,13 +24,13 @@ class NavBar extends React.Component {
         ) : ''}
 
         <Grid textAlign='center' container padded>
-          <Menu.Item position="center" as={NavLink} activeClassName="" exact to="/">
+          <Menu.Item  as={NavLink} activeClassName="" exact to="/">
             <Image size="small" src="/images/UHber.png" />
           </Menu.Item>
         </Grid>
 
         {this.props.currentUser ? (
-            [<Menu.Item position="right" icon={'calendar alternate outline'}
+            [<Menu.Item position="right"
                         as={NavLink} activeClassName="active" exact to="/" key=''>
               <Icon name={'calendar alternate outline'} size='large'/>Calendar</Menu.Item>]
         ) : ''}
@@ -46,7 +46,7 @@ class NavBar extends React.Component {
           ) : (
             <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item icon="address card" text="Profile" as={NavLink} exact to="" />
+                <Dropdown.Item icon="address card" text="Profile" as={NavLink} exact to="/edit/:_id" />
                 <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>
