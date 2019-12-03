@@ -2,6 +2,16 @@
   font-size: 50px;
 }
 
+.signUpBackground{
+  background: url('images/signUpBackground.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.sign-in-background {
+  background: url('images/hawaii-beach.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 .forgot-text {
   display: table;
   position: absolute;
@@ -18,9 +28,6 @@
   text-align: center;
 }
 
-/*.submit-button .ui.button {*/
-/*  background-color: #024731;*/
-/*  color: #fff;*/
-/*  font-weight: 400;*/
-/*}*/
-
+.login-form {
+  margin: 5rem 0;
+}
