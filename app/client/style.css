@@ -7,6 +7,11 @@
   background-size: cover;
 }
 
+.sign-in-background {
+  background: url('images/hawaii-beach.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 .forgot-text {
   display: table;
   position: absolute;
@@ -23,3 +28,6 @@
   text-align: center;
 }
 
+.login-form {
+  margin: 5rem 0;
+}
