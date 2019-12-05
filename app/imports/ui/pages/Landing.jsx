@@ -10,14 +10,14 @@ class Landing extends React.Component {
 
           <Grid.Row>
             <div className='uhber-background'>
-            <Header size='huge' color='green'>UHber</Header>
+            <Image size="large" src="\images\UHberIcon2.png" />
             </div>
           </Grid.Row>
           <Grid.Column width={1}></Grid.Column>
 
           <Grid.Column width={5}>
             <Grid.Row>
-              <h1>What is UHber?</h1>
+              <h1>What is UHber (/ə-bər/)?</h1>
               <Container textAlign='justified'>
                 <p>The UHber website provides a space for students traveling to/from the UH Manoa campus to easily
                   coordinate carpools. </p>
@@ -43,7 +43,7 @@ class Landing extends React.Component {
           <Grid.Column width={1}></Grid.Column>
 
           <Grid.Column width={8}>
-            <Image fluid src="https://www.nse.org/docs/slides/102_2_University-of-Hawaii-at-Manoa.jpg"/>
+            <Image fluid src="/images/UHber-landing.jpg"/>
           </Grid.Column>
 
           <Grid.Column width={1}></Grid.Column>
