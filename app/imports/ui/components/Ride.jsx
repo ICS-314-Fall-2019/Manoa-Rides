@@ -11,7 +11,9 @@ class Ride extends React.Component {
         <Card centered>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
-            <Card.Meta>{this.props.ride.date} at {this.props.ride.time}</Card.Meta>
+            <Card.Meta>
+              {this.props.ride.month}/{this.props.ride.day}/{this.props.ride.year}  {this.props.ride.time}
+            </Card.Meta>
             <Card.Description>
               <a href= '#'>
               <strong>Driver:</strong> {this.props.ride.driver}
