@@ -48,7 +48,10 @@ class ListRides extends React.Component {
         <Container >
           <Header as="h2" textAlign="center"> Available Rides</Header>
           <Card.Group>
-            {this.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
+            {Object.keys(this.rides)
+                .filter(ride => this.rides[ride].rider === 'Ron')
+                .map((ride, index) => <Ride key = {index} ride={ride}/>)}
+
           </Card.Group>
         </Container>
         </div>
