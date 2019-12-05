@@ -62,10 +62,14 @@ class EditProfile extends React.Component {
                 </Segment>
               </AutoForm>
             </Grid.Column>
-            <Grid.Column border={0}>
-              <Menu>
-                <Avatar skypeId="sitebase" size="200" />
-              </Menu>
+            <Grid.Column rows={2} border={0}>
+              <Grid.Row>
+                  <Avatar skypeId="sitebase" size="200" />
+              </Grid.Row>
+              <Grid.Row>
+                <Avatar size="200"
+                        src="https://f1.media.brightcove.com/8/1078702682/1078702682_6004950245001_6004956161001-vs.jpg?pubId=1078702682&videoId=6004956161001" />
+              </Grid.Row>
             </Grid.Column>
           </Grid.Row>
         </Grid>
