@@ -12,7 +12,8 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px', backgroundColor: '#024731' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-
+         <Menu.Item position="left" as={NavLink} activeClassName="" exact to="/">
+          <Image size="small" src="/images/UHber.png" /></Menu.Item>
         {this.props.currentUser ? (
             [<Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/add" key='add'>
               <Icon name='plus square outline' size='large'/>Create Ride</Menu.Item>,
@@ -22,12 +23,6 @@ class NavBar extends React.Component {
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
-
-        <Grid textAlign='center' container padded>
-          <Menu.Item  as={NavLink} activeClassName="" exact to="/">
-            <Image size="small" src="/images/UHber.png" />
-          </Menu.Item>
-        </Grid>
 
         {this.props.currentUser ? (
             [<Menu.Item position="right"
