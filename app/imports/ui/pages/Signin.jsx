@@ -42,54 +42,56 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-      <Container>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Sign-In
-            </Header>
-            <Form onSubmit={this.submit}>
-              <Segment stacked>
-                <Form.Field>
-                  <Input
-                      label={{ basic: true, content: 'Email' }}
-                      name="email"
-                      type="email"
-                      placeholder="Enter email"
-                      onChange={this.handleChange}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <Input
-                      label={{ basic: true, content: 'Password' }}
-                      name="password"
-                      placeholder="Enter password"
-                      type="password"
-                      onChange={this.handleChange}
-                  />
-                </Form.Field>
-                <Form.Button content="Submit" className='submit-button'/>
-                <span className='forgot-text'>
+        <div className='sign-in-background'>
+          <Container>
+            <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+              <Grid.Column>
+                <Header as="h2" textAlign="center">
+                  Sign-In
+                </Header>
+                <Form onSubmit={this.submit} className='login-form'>
+                  <Segment stacked>
+                    <Form.Field>
+                      <Input
+                          label={{ basic: true, content: 'Email' }}
+                          name="email"
+                          type="email"
+                          placeholder="Enter email"
+                          onChange={this.handleChange}
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <Input
+                          label={{ basic: true, content: 'Password' }}
+                          name="password"
+                          placeholder="Enter password"
+                          type="password"
+                          onChange={this.handleChange}
+                      />
+                    </Form.Field>
+                    <Form.Button content="Submit" className='submit-button'/>
+                    <span className='forgot-text'>
                   <Link to="/signup">Click here to Register</Link>
                   <span>
-                    <Link to="/forgotPass">Forgot Password</Link>
+                    <Link to="/forgot">Forgot Password</Link>
                   </span>
                 </span>
-                <br/>
-              </Segment>
-            </Form>
-            {this.state.error === '' ? (
-              ''
-            ) : (
-              <Message
-                error
-                header="Login was not successful"
-                content={this.state.error}
-              />
-            )}
-          </Grid.Column>
-        </Grid>
-      </Container>
+                    <br/>
+                  </Segment>
+                </Form>
+                {this.state.error === '' ? (
+                    ''
+                ) : (
+                    <Message
+                        error
+                        header="Login was not successful"
+                        content={this.state.error}
+                    />
+                )}
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </div>
     );
   }
 }
