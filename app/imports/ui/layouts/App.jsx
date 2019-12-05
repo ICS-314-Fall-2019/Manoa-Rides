@@ -7,10 +7,9 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListRides from '../pages/ListRides';
+import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
-import AddProfile from '../pages/AddProfile';
 import EditProfile from '../pages/EditProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -31,9 +30,7 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <Route path="/forgot" component={ForgotPassword}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/list" component={ListRides}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/addProfile" component={AddProfile}/>
               <ProtectedRoute path="/edit/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
