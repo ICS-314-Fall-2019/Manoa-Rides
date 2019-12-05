@@ -12,27 +12,27 @@ class ListRides extends React.Component {
   rides = [{
     driver: 'Philip', rider: 'Johnson',
     origin: 'Hawaii Kai', destination: 'UH Manoa',
-    date: 1212, time: 600,
+    month: 12, day: 12, year: 2019, time: '6:00AM',
   },
     {
       driver: 'Henri', rider: 'Casanova',
       origin: 'Kailua', destination: 'UH Manoa',
-      date: 1222, time: 900,
+      month: 12, day: 22, year: 2019, time: '9:00AM',
     },
     {
       driver: 'Kim', rider: 'Ron',
       origin: 'UH Manoa', destination: 'Honolulu',
-      date: 1225, time: 1300,
+      month: 12, day: 25, year: 2019, time: '1:00PM',
     },
     {
       driver: 'Henri', rider: 'Casanova',
       origin: 'UH Manoa', destination: 'Kailua',
-      date: 1222, time: 1600,
+      month: 12, day: 28, year: 2019, time: '4:00PM',
     },
     {
       driver: 'Kim', rider: 'Ron',
       origin: 'UH Manoa', destination: 'Honolulu',
-      date: 1225, time: 1300,
+      month: 12, day: 23, year: 2019, time: '1:00PM',
     },
   ];
 
