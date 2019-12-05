@@ -6,17 +6,17 @@ class Landing extends React.Component {
   render() {
 
     return (
-
+        <div className='landing-background'>
         <Grid verticalAlign='middle' textAlign='center'>
           <Grid.Row>
             <Image size="large" src="\images\UHberIcon2.png" />
           </Grid.Row>
 
-          <div className='landing-background'>
+
             <Grid container stackable>
             <Grid.Column width={6}>
               <Grid.Row>
-              <h1>What is UHber (/ə-bər/)?</h1>
+              <Header as='h1' textAlign='center' inverted>What is UHber (/ʌ-bər/)?</Header>
               <Container textAlign='justified'>
                 <p>The UHber website provides a space for students traveling to/from the UH Manoa campus to easily
                   coordinate carpools. </p>
@@ -25,9 +25,9 @@ class Landing extends React.Component {
                   student; this system also prohibits banned users from continuing to use the UHber website.</p>
               </Container>
               </Grid.Row>
-
+              <Divider hidden />
             <Grid.Row>
-              <h1>How to Use UHber</h1>
+              <Header as='h1' textAlign='center' inverted>How to Use UHber</Header>
               <Container textAlign='justified'>
                 <p>After signing up for UHber with your UH email, users can sign in to look through a list of future
                   rides or create a new ride. After creating a new ride or signing up for a ride, users can view their
@@ -37,10 +37,18 @@ class Landing extends React.Component {
                   user type (driver, rider, or both), and car picture. </p>
               </Container>
             </Grid.Row>
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+
             </Grid.Column>
             </Grid>
-          </div>
+
         </Grid>
+        </div>
     );
   }
 }

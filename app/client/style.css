@@ -1,6 +1,7 @@
 .landing-background{
   background: url('images/UHber-landing.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
 }
 
 .signUpBackground{
