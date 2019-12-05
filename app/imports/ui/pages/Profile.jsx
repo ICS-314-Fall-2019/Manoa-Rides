@@ -30,7 +30,7 @@ class Profile extends React.Component {
               <Grid.Column>
                 <Grid.Row centered columns={4}>
                   <Header as="h2" textAlign="center">Edit Profile</Header>
-                  <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
+                  <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment border={0}>
                       <TextField name='name'/>
                       <NumField name='quantity' decimal={false}/>

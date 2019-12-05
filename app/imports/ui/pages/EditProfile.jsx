@@ -19,13 +19,14 @@ class EditProfile extends React.Component {
   /** On successful submit, insert the data. */
   submit(data) {
     const {
-      firstName,
-      lastName,
-      address,
-      image,
-      description,
-      _id,
+      Name,
+      Location,
+      Phone,
+      Email,
+      Other,
+      UserType
     } = data;
+    const owner = Meteor.user().username;
     Profiles.update(_id, { $set: {
         firstName,
         lastName,
