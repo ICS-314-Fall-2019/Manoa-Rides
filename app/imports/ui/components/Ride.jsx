@@ -6,8 +6,9 @@ import { withRouter } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Ride extends React.Component {
   render() {
+
     return (
-        <Card>
+        <Card centered>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
             <Card.Meta>{this.props.ride.date} at {this.props.ride.time}</Card.Meta>
@@ -20,10 +21,10 @@ class Ride extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <div className='ui two buttons'>
-              <Button basic color='green'>
+              <Button basic color='green' onClick={this.handleRideClick}>
               Take this ride!
             </Button>
-              <Button basic color='blue'>
+              <Button basic color='blue' href='https://www.google.com/'>
                 Driver Info.
               </Button>
             </div>
