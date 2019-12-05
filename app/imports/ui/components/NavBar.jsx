@@ -15,10 +15,20 @@ class NavBar extends React.Component {
         <Menu.Item position="left" as={NavLink} activeClassName="" exact to="/">
           <Image size="small" src="/images/UHber.png" /></Menu.Item>
         {this.props.currentUser ? (
-            [<Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/add" key='add'>
+            [
+              <Dropdown item text="My Rides" position="left"
+                        activeClassName="active" exact to="/myRides" key='myRides'>
+                <Dropdown.Menu>
+                  <Dropdown.Item text="Requests" as={NavLink} exact to="/requests"/>
+                  <Dropdown.Item text="Active Rides" as={NavLink} exact to="/activeRides"/>
+                  <Dropdown.Item text="Im the driver" as={NavLink} exact to="/driving"/>
+                  <Dropdown.Item text="Im the rider" as={NavLink} exact to="/riding"/>
+                </Dropdown.Menu>
+              </Dropdown>,
+                <Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/add" key='add'>
               <Icon name='plus square outline' size='large'/>Create Ride</Menu.Item>,
               <Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/list" key='list'>
-                <Icon name='car' size='large'/>Available Rides</Menu.Item>
+                <Icon name='car' size='large'/>Available Rides</Menu.Item>,
             ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
