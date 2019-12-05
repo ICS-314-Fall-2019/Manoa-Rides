@@ -1,5 +1,7 @@
-.uhber-background{
-  font-size: 50px;
+.landing-background{
+  background: url('images/UHber-landing.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
 .signUpBackground{
