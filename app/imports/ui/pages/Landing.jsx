@@ -6,17 +6,16 @@ class Landing extends React.Component {
   render() {
 
     return (
+
         <Grid verticalAlign='middle' textAlign='center'>
-
           <Grid.Row>
-            <div className='uhber-background'>
             <Image size="large" src="\images\UHberIcon2.png" />
-            </div>
           </Grid.Row>
-          <Grid.Column width={1}></Grid.Column>
 
-          <Grid.Column width={5}>
-            <Grid.Row>
+          <div className='landing-background'>
+            <Grid container stackable>
+            <Grid.Column width={6}>
+              <Grid.Row>
               <h1>What is UHber (/ə-bər/)?</h1>
               <Container textAlign='justified'>
                 <p>The UHber website provides a space for students traveling to/from the UH Manoa campus to easily
@@ -25,8 +24,8 @@ class Landing extends React.Component {
                 <p>The use of UH-email/UH ID numbers ensures that each user is a verified UH Manoa
                   student; this system also prohibits banned users from continuing to use the UHber website.</p>
               </Container>
-            </Grid.Row>
-            <Divider hidden horizontal/>
+              </Grid.Row>
+
             <Grid.Row>
               <h1>How to Use UHber</h1>
               <Container textAlign='justified'>
@@ -38,16 +37,9 @@ class Landing extends React.Component {
                   user type (driver, rider, or both), and car picture. </p>
               </Container>
             </Grid.Row>
-          </Grid.Column>
-
-          <Grid.Column width={1}></Grid.Column>
-
-          <Grid.Column width={8}>
-            <Image fluid src="/images/UHber-landing.jpg"/>
-          </Grid.Column>
-
-          <Grid.Column width={1}></Grid.Column>
-
+            </Grid.Column>
+            </Grid>
+          </div>
         </Grid>
     );
   }
