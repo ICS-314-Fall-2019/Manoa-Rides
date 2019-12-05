@@ -44,12 +44,14 @@ class ListRides extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
+        <div className='signUpBackground' >
+        <Container >
           <Header as="h2" textAlign="center"> Available Rides</Header>
           <Card.Group>
             {this.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
           </Card.Group>
         </Container>
+        </div>
     );
   }
 }
