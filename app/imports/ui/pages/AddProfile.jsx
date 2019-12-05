@@ -45,15 +45,40 @@ class AddProfile extends React.Component {
     } = data;
     const Owner = Meteor.user().username;
     // For Insert or create new Profile
-    const check = Profiles.findOne(
+    let check = Profiles.findOne(
       {
         Owner : Meteor.user().username
+      },
+      {
+        Owner: 1, _id: 0
       }
     );
+    
+    if (check === undefined){
+      check = {};
+      check.Owner = '';
+    }
 
-    if (check == "john@foo.com")
-      console.log("hi");
-      console.log(Profiles.find({}));
+    // If inside database then Update
+    if (check.Owner == Meteor.user().username){
+        const ID = check._id;
+        Profiles.update(
+          ID, 
+        { 
+          $set: { 
+          Name, 
+          Location, 
+          Phone,
+          Email,
+          Other,
+          UserType
+          } 
+        }, (error) => (error ?
+          swal('Error', error.message, 'error') :
+          swal('Success', 'Item updated successfully', 'success')));
+    }
+    // Else, Insert
+    else{
       Profiles.insert(
         {
           Name,
@@ -70,6 +95,7 @@ class AddProfile extends React.Component {
             swal('Success', 'Item added successfully', 'success');
           }
         });
+    }
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -97,4 +123,9 @@ class AddProfile extends React.Component {
   }
 }
 
-export default AddProfile;
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(({ match }) => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Profiles');
+  return{};
+})(AddProfile);
