@@ -11,7 +11,16 @@ const RidesSchema = new SimpleSchema({
   rider: String,
   origin: String,
   destination: String,
-  date: Date,
+  month: {
+    type: Number,
+    allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12],
+  },
+  day: Number,
+  year: Number,
+  time: {
+    type: String,
+    allowedValues: ['AM', 'PM'],
+  },
 }, { tracker: Tracker });
 
 /** Attach this schema to the Notes. */

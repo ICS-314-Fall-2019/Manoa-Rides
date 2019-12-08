@@ -8,5 +8,37 @@
       "firstName": "John",
       "lastName": "Doe",
       "password": "changeme" }
-  ]
+  ],
+  "defaultRides" : [
+    {
+  "driver": "Philip", "rider": "Johnson",
+  "origin": "Hawaii Kai", "destination": "UH Manoa",
+  "month": 12, "day": 12, "year": 19,
+     "hour": 6, "min": 0, "time": "AM"
+},
+  {
+    "driver": "Henri", "rider": "Casanova",
+    "origin": "Kailua", "destination": "UH Manoa",
+    "month": 12, "day": 22, "year": 19,
+    "hour": 9, "min": 0, "time": "AM"
+  },
+  {
+    "driver": "Kim", "rider": "Ron",
+    "origin": "UH Manoa", "destination": "Honolulu",
+    "month": 12, "day": 25, "year": 19,
+    "hour": 1, "min": 0, "time": "PM"
+  },
+  {
+    "driver": "Henri", "rider": "Casanova",
+    "origin": "UH Manoa", "destination": "Kailua",
+    "month": 12, "day": 22, "year": 19,
+    "hour": 4, "min": 0, "time": "PM"
+  },
+  {
+    "driver": "Kim", "rider": "Ron",
+    "origin": "UH Manoa", "destination": "Honolulu",
+    "month": 12, "day": 25, "year": 19,
+    "hour": 1, "min": 0, "time": "PM"
+  }
+]
 }
