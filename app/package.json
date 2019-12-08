@@ -11,6 +11,7 @@
     "react": "^16.8.6",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-avatar": "^3.7.0",
+    "react-datepicker": "^2.10.1",
     "react-dom": "^16.8.6",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

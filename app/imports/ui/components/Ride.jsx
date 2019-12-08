@@ -6,14 +6,11 @@ import { withRouter } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Ride extends React.Component {
   render() {
-
     return (
-        <Card centered>
+        <Card>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
-            <Card.Meta>
-              {this.props.ride.month}/{this.props.ride.day}/{this.props.ride.year}  {this.props.ride.time}
-            </Card.Meta>
+            <Card.Meta>{this.props.ride.date} at {this.props.ride.time}</Card.Meta>
             <Card.Description>
               <a href= '#'>
               <strong>Driver:</strong> {this.props.ride.driver}
@@ -23,10 +20,10 @@ class Ride extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <div className='ui two buttons'>
-              <Button basic color='green' onClick={this.handleRideClick}>
+              <Button basic color='green'>
               Take this ride!
             </Button>
-              <Button basic color='blue' href='https://www.google.com/'>
+              <Button basic color='blue'>
                 Driver Info.
               </Button>
             </div>
