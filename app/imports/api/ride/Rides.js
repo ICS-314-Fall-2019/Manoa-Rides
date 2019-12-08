@@ -11,12 +11,7 @@ const StuffSchema = new SimpleSchema({
   rider: String,
   origin: String,
   destination: String,
-  date:
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
+  date: Date,
   owner: String,
 }, { tracker: Tracker });
 
