@@ -11,6 +11,7 @@ import ListRides from '../pages/ListRides';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import AddProfile from '../pages/AddProfile';
+import Calendar from '../pages/Calendar';
 import EditProfile from '../pages/EditProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -32,6 +33,7 @@ class App extends React.Component {
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/addProfile" component={AddProfile}/>
               <ProtectedRoute path="/myRides" component={AddStuff}/>
+              <ProtectedRoute path="/calendar" component={Calendar}/>
               <ProtectedRoute path="/edit/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
