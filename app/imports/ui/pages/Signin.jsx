@@ -45,7 +45,7 @@ export default class Signin extends React.Component {
         <div className='sign-in-background'>
           <Container>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-              <Grid.Column>
+              <Grid.Column className='column-margin'>
                 <Header as="h2" textAlign="center">
                   Sign-In
                 </Header>
@@ -73,7 +73,7 @@ export default class Signin extends React.Component {
                     <span className='forgot-text'>
                   <Link to="/signup">Click here to Register</Link>
                   <span>
-                    <Link to="/forgotPass">Forgot Password</Link>
+                    <Link to="/forgot">Forgot Password</Link>
                   </span>
                 </span>
                     <br/>

@@ -13,6 +13,15 @@
   background-size: cover;
 }
 
+.forgot-background {
+  background: url('images/hawaii.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.forgot-background .ui.centered.container.grid .column {
+  margin: 6.5rem 0;
+}
+
 .forgot-text {
   display: table;
   position: absolute;
