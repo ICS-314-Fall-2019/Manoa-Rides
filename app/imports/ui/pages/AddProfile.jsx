@@ -1,6 +1,7 @@
 import React from 'react';
 import Avatar from 'react-avatar';
-import { Grid, Loader, Menu, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Menu, Header, Segment, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -42,7 +43,7 @@ let check = {
   Email: String,
   Other: String,
   UserType: String,
-  Owner: String  
+  Owner: String
 }
 
 /** Renders the Page for editing a single document. */
@@ -58,7 +59,7 @@ class AddProfile extends React.Component {
         Owner: 1, _id: 0
       }
     );
-    
+
     if (check === undefined){
       check = {};
       check.Owner = '';
@@ -96,16 +97,16 @@ class AddProfile extends React.Component {
     if (check.Owner == Meteor.user()._id){
         const ID = check._id;
         Profiles.update(
-          ID, 
-        { 
-          $set: { 
-          Name, 
-          Location, 
+          ID,
+        {
+          $set: {
+          Name,
+          Location,
           Phone,
           Email,
           Other,
           UserType
-          } 
+          }
         }, (error) => (error ?
           swal('Error', error.message, 'error') :
           swal('Success', 'Item updated successfully', 'success')));
@@ -146,18 +147,21 @@ class AddProfile extends React.Component {
           <Grid.Column>
             <Header as="h2" textAlign="center">Edit Your Profile</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} model={this.props.check}>
-                <TextField name='Name' placeholder='Write your First and Last Name.'/>
-                <TextField name='Location'/>
+              <TextField name='Name' placeholder='Write your First and Last Name'/>
+                <TextField name='Location' placeholder='Home city'/>
                 <bold>Contact Information</bold>
                 <Segment.Group>
                   <Segment>
                     <TextField name='Phone'/>
                     <TextField name='Email'/>
-                    <TextField name='Other' required={0}/>
+                    <TextField name='Other'  placeholder='Other contact' required={0}/>
                   </Segment>
                 </Segment.Group>
                 <SelectField name='UserType'/>
                 <SubmitField value='Submit'/>
+              <span>
+                    <Link to="/edit/:_id">Back to Profile</Link>
+                  </span>
                 <ErrorsField/>
             </AutoForm>
           </Grid.Column>
