@@ -22,7 +22,12 @@ const ProfileformSchema = new SimpleSchema({
   Location: String,
   Phone: String,
   Email: String,
-  Other: String,
+  Other: {
+    type:String,
+    defaultValue:'',
+    optional: true,
+    required: false,
+  },
   UserType: {
     type: String,
     allowedValues: ['Driver', 'Rider', 'Both'],

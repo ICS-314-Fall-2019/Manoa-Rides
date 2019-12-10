@@ -11,7 +11,12 @@ const ProfileSchema = new SimpleSchema({
   Location: String,
   Phone: String,
   Email: String,
-  Other: String,
+  Other: {
+    type:String,
+    defaultValue:'',
+    optional: true,
+    required: false,
+  },
   Owner: String,
   UserType: {
     type: String,
