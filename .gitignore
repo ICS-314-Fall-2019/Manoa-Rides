@@ -4,3 +4,4 @@
 node_modules
 settings.production.json
 .vscode
+package-lock.json

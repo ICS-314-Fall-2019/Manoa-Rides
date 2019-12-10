@@ -14,7 +14,7 @@ import { Profiles, ProfileSchema } from '../../api/profile/Profile';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import Footer from '../components/Footer';
-
+import { Roles } from 'meteor/alanning:roles';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const ProfileformSchema = new SimpleSchema({
@@ -30,22 +30,22 @@ const ProfileformSchema = new SimpleSchema({
   },
 });
 
+let check = {
+  Name: String,
+  Location: String,
+  Phone: String,
+  Email: String,
+  Other: String,
+  UserType: String,
+  Owner: String  
+}
+
 /** Renders the Page for editing a single document. */
 class AddProfile extends React.Component {
 
-  /** On successful submit, insert the data. */
-  submit(data, formRef) {
-    const {
-      Name,
-      Location,
-      Phone,
-      Email,
-      Other,
-      UserType
-    } = data;
-    const Owner = Meteor.user().username;
-    // For Insert or create new Profile
-    let check = Profiles.findOne(
+  check(data){
+
+    check = Profiles.findOne(
       {
         Owner : Meteor.user().username
       },
@@ -58,9 +58,37 @@ class AddProfile extends React.Component {
       check = {};
       check.Owner = '';
     }
+  }
+
+  /** On successful submit, insert the data. */
+  submit(data, formRef) {
+    const {
+      Name,
+      Location,
+      Phone,
+      Email,
+      Other,
+      UserType
+    } = data;
+    const Owner = Meteor.user()._id;
+    // For Insert or create new Profile
+    let check = Profiles.findOne(
+      {
+        Owner: Meteor.user()._id
+      },
+      {
+        Owner: 1, _id: 0
+      }
+    );
+    console.log('Owner');
+    console.log(Owner);
+    if (check === undefined){
+      check = {};
+      check.Owner = '';
+    }
 
     // If inside database then Update
-    if (check.Owner == Meteor.user().username){
+    if (check.Owner == Meteor.user()._id){
         const ID = check._id;
         Profiles.update(
           ID, 
@@ -79,6 +107,7 @@ class AddProfile extends React.Component {
     }
     // Else, Insert
     else{
+      console.log('inserting')
       Profiles.insert(
         {
           Name,
@@ -98,24 +127,33 @@ class AddProfile extends React.Component {
     }
   }
 
-  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
+  renderPage() {
+    //this.check(data);
     let fRef = null;
     return (
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Edit Your Profile</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
-                <TextField name='Name'/>
+            <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} model={this.props.check}>
+                <TextField name='Name' placeholder='Write your First and Last Name.'/>
                 <TextField name='Location'/>
-                <TextField name='Phone'/>
-                <TextField name='Email'/>
-                <TextField name='Other'/>
+                <bold>Contact Information</bold>
+                <Segment.Group>
+                  <Segment>
+                    <TextField name='Phone'/>
+                    <TextField name='Email'/>
+                    <TextField name='Other' required={0}/>
+                  </Segment>
+                </Segment.Group>
                 <SelectField name='UserType'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-              </Segment>
             </AutoForm>
           </Grid.Column>
         </Grid>
@@ -123,9 +161,31 @@ class AddProfile extends React.Component {
   }
 }
 
+/** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
+AddProfile.propTypes = {
+  check: PropTypes.object,
+  model: PropTypes.object,
+  ready: PropTypes.bool.isRequired,
+  currentUser: PropTypes.string,
+  currentId: PropTypes.string,
+};
+
+
+
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
+  // Get the ProfileID from the URL fields. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const usersID = match.params._id;
+
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Profiles');
-  return{};
+
+  return{
+    check: Profiles.findOne(
+    {
+      Owner: usersID
+    }
+    ),
+    ready: subscription.ready(),
+  };
 })(AddProfile);
