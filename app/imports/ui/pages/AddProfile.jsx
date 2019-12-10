@@ -21,6 +21,13 @@ import { Roles } from 'meteor/alanning:roles';
 const ProfileformSchema = new SimpleSchema({
   Name: String,
   Location: String,
+  Image: String,
+  Ride: {
+    type:String,
+    defaultValue:'',
+    optional: true,
+    required: false,
+  },
   Phone: String,
   Email: String,
   Other: {
@@ -39,6 +46,8 @@ const ProfileformSchema = new SimpleSchema({
 let check = {
   Name: String,
   Location: String,
+  Image: String,
+  Ride: String,
   Phone: String,
   Email: String,
   Other: String,
@@ -149,7 +158,9 @@ class AddProfile extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} model={this.props.check}>
               <TextField name='Name' placeholder='Write your First and Last Name'/>
                 <TextField name='Location' placeholder='Home city'/>
-                <bold>Contact Information</bold>
+              <TextField name='Image' placeholder='Profile image url'/>
+              <TextField name='Ride' placeholder='Ride image url'/>
+              <bold>Contact Information</bold>
                 <Segment.Group>
                   <Segment>
                     <TextField name='Phone'/>

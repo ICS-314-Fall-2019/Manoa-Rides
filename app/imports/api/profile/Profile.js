@@ -9,6 +9,13 @@ const Profiles = new Mongo.Collection('Profiles');
 const ProfileSchema = new SimpleSchema({
   Name: String,
   Location: String,
+  Image: String,
+  Ride: {
+    type:String,
+    defaultValue:'',
+    optional: true,
+    required: false,
+  },
   Phone: String,
   Email: String,
   Other: {
