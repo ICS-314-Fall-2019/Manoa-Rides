@@ -6,17 +6,18 @@ class Landing extends React.Component {
   render() {
 
     return (
-        <div className='landing-background'>
         <Grid verticalAlign='middle' textAlign='center'>
+
           <Grid.Row>
+            <div className='uhber-background'>
             <Image size="large" src="\images\UHberIcon2.png" />
+            </div>
           </Grid.Row>
+          <Grid.Column width={1}></Grid.Column>
 
-
-            <Grid container stackable>
-            <Grid.Column width={6}>
-              <Grid.Row>
-              <Header as='h1' textAlign='center' inverted>What is UHber (/ʌ-bər/)?</Header>
+          <Grid.Column width={5}>
+            <Grid.Row>
+              <h1>What is UHber (/ə-bər/)?</h1>
               <Container textAlign='justified'>
                 <p>The UHber website provides a space for students traveling to/from the UH Manoa campus to easily
                   coordinate carpools. </p>
@@ -24,10 +25,10 @@ class Landing extends React.Component {
                 <p>The use of UH-email/UH ID numbers ensures that each user is a verified UH Manoa
                   student; this system also prohibits banned users from continuing to use the UHber website.</p>
               </Container>
-              </Grid.Row>
-              <Divider hidden />
+            </Grid.Row>
+            <Divider hidden horizontal/>
             <Grid.Row>
-              <Header as='h1' textAlign='center' inverted>How to Use UHber</Header>
+              <h1>How to Use UHber</h1>
               <Container textAlign='justified'>
                 <p>After signing up for UHber with your UH email, users can sign in to look through a list of future
                   rides or create a new ride. After creating a new ride or signing up for a ride, users can view their
@@ -37,18 +38,17 @@ class Landing extends React.Component {
                   user type (driver, rider, or both), and car picture. </p>
               </Container>
             </Grid.Row>
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
-              <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+          </Grid.Column>
 
-            </Grid.Column>
-            </Grid>
+          <Grid.Column width={1}></Grid.Column>
+
+          <Grid.Column width={8}>
+            <Image fluid src="/images/UHber-landing.jpg"/>
+          </Grid.Column>
+
+          <Grid.Column width={1}></Grid.Column>
 
         </Grid>
-        </div>
     );
   }
 }

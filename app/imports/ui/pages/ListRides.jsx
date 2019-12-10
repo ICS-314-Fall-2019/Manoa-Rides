@@ -12,27 +12,27 @@ class ListRides extends React.Component {
   rides = [{
     driver: 'Philip', rider: 'Johnson',
     origin: 'Hawaii Kai', destination: 'UH Manoa',
-    month: 12, day: 12, year: 2019, time: '6:00AM',
+    date: 1212, time: 600,
   },
     {
       driver: 'Henri', rider: 'Casanova',
       origin: 'Kailua', destination: 'UH Manoa',
-      month: 12, day: 22, year: 2019, time: '9:00AM',
+      date: 1222, time: 900,
     },
     {
       driver: 'Kim', rider: 'Ron',
       origin: 'UH Manoa', destination: 'Honolulu',
-      month: 12, day: 25, year: 2019, time: '1:00PM',
+      date: 1225, time: 1300,
     },
     {
       driver: 'Henri', rider: 'Casanova',
       origin: 'UH Manoa', destination: 'Kailua',
-      month: 12, day: 28, year: 2019, time: '4:00PM',
+      date: 1222, time: 1600,
     },
     {
       driver: 'Kim', rider: 'Ron',
       origin: 'UH Manoa', destination: 'Honolulu',
-      month: 12, day: 23, year: 2019, time: '1:00PM',
+      date: 1225, time: 1300,
     },
   ];
 
@@ -44,14 +44,12 @@ class ListRides extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className='signUpBackground' >
-        <Container >
+        <Container>
           <Header as="h2" textAlign="center"> Available Rides</Header>
           <Card.Group>
             {this.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
           </Card.Group>
         </Container>
-        </div>
     );
   }
 }

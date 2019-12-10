@@ -1,7 +1,5 @@
-.landing-background{
-  background: url('images/UHber-landing.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
+.uhber-background{
+  font-size: 50px;
 }
 
 .signUpBackground{
@@ -26,10 +24,11 @@
   display: table-cell;
 }
 
+.login-form {
+  margin: 5rem 0;
+}
+
 .submit-button {
   text-align: center;
 }
 
-.login-form {
-  margin: 5rem 0;
-}
