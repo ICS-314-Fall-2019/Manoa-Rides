@@ -1,66 +1,107 @@
 import React from 'react';
-import { Rides } from '/imports/api/ride/Rides';
-import { Grid, Segment, Header } from 'semantic-ui-react';
-import AutoForm from 'uniforms-semantic/AutoForm';
-import TextField from 'uniforms-semantic/TextField';
-import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
-import SubmitField from 'uniforms-semantic/SubmitField';
-import ErrorsField from 'uniforms-semantic/ErrorsField';
+import { Container, Form, Grid, Header, Segment, Input, Select } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import SimpleSchema from 'simpl-schema';
-
-/** Create a schema to specify the structure of the data to appear in the form. */
-const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
-});
+import { Rides } from '../../api/ride/Rides';
 
 /** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
+class AddRides extends React.Component {
 
-  /** On submit, insert the data. */
-  submit(data, formRef) {
-    const { name, quantity, condition } = data;
-    const owner = Meteor.user().username;
-    Stuffs.insert({ name, quantity, condition, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
+  /** Initialize state fields. */
+  constructor(props) {
+    super(props);
+    this.state = { driver: '', rider: '', origin: '', destination: '', month: '', day: '', year: '',
+      hour: '', min: '', time: '', hi: '', error: '', redirectToReferer: false };
   }
 
-  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
+  /** Update the form controls each time the user interacts with them. */
+  handleChange = (e, { name, value }) => {
+    this.setState({ [name]: value });
+  }
+
+  /** On submit, insert the data. */
+  submit = () => {
+    const { origin, destination, month, day, year, hour, min, time, hi } = this.state;
+    const owner = Meteor.user().username;
+    Rides.insert({ origin, destination, month, day, year, hour, min, time, hi, owner }, (err) => {
+      if (err) {
+        this.setState({ error: err.reason });
+      } else {
+        swal('Success', 'Item added successfully', 'success');
+        this.setState({ driver: '', rider: '', origin: '', destination: '', month: '', day: '', year: '',
+          hour: '', min: '', time: '', hi: '', error: '', redirectToReferer: false });
+      }
+    });
+  }
+
+  /** Display the form. */
   render() {
-    let fRef = null;
+    const times = [
+      { key: 'm', text: 'Male', value: 'male' },
+      { key: 'f', text: 'Female', value: 'female' },
+      { key: 'o', text: 'Other', value: 'other' },
+    ];
+    const hours = [
+      { key: 'm', text: 'Male', value: 'male' },
+      { key: 'f', text: 'Female', value: 'female' },
+      { key: 'o', text: 'Other', value: 'other' },
+    ];
+    const mins = [
+      { key: 'm', text: 'Male', value: 'male' },
+      { key: 'f', text: 'Female', value: 'female' },
+      { key: 'o', text: 'Other', value: 'other' },
+    ];
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Create Your Ride</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
-                <TextField name='name'/>
-                <NumField name='quantity' decimal={false}/>
-                <SelectField name='condition'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+        <div className='signUpBackground'>
+          <Container>
+            <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+              <Grid.Column>
+                <Header as="h2" textAlign="center">
+                  Offer A Ride
+                </Header>
+                <Form onSubmit={this.submit}>
+                  <Segment stacked>
+                    <Form.Group widths='equal'>
+                    <Grid columns='equal'>
+                      <Grid.Column>
+                        <Form.Input readOnly
+                            label="Driver"
+                            name="driver"
+                            type="driver"
+                            placeholder="Enter First Name"
+                        />
+                      </Grid.Column>
+                      <Grid.Column>
+                        <Form.Input readOnly
+                            label="Rider"
+                            name="rider"
+                            type="rider"
+                            placeholder="TBD"
+                        />
+                      </Grid.Column>
+                    </Grid>
+                    </Form.Group>
+                    <Form.Group widths='equal' inline>
+                      <label>Date</label>
+                      <Input placeholder='Month' />
+                        / <Input placeholder='Day' />
+                      / <Input placeholder='Year' />
+                    </Form.Group>
+                    <Form.Group widths='equal' inline>
+                      <label>Time</label>
+                      <Select options={hours} placeholder='Hour' error />
+                      : <Select options={mins} placeholder='Min' error />
+                       <Select options={times} placeholder='AM/PM' error />
+                    </Form.Group>
+                    <Form.Button content="Submit"/>
+                  </Segment>
+                </Form>
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </div>
     );
   }
 }
 
-export default AddStuff;
+export default AddRides;
