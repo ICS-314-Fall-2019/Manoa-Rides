@@ -46,11 +46,9 @@ export default class Signin extends React.Component {
           <Container>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
               <Grid.Column className='column-margin'>
-                <Header as="h2" textAlign="center">
-                  Sign-In
-                </Header>
                 <Form onSubmit={this.submit} className='login-form'>
                   <Segment stacked>
+                    <Header as="h2" textAlign="center"> Sign-In </Header>
                     <Form.Field>
                       <Input
                           label={{ basic: true, content: 'Email' }}
