@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Form, Grid, Header, Segment, Input, Select, Dropdown } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Segment, Select, Dropdown, Message } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { Rides } from '../../api/ride/Rides';
+
 
 /** Renders the Page for adding a document. */
 class AddRides extends React.Component {
@@ -26,16 +27,15 @@ class AddRides extends React.Component {
     Rides.insert({ origin, destination, month, day, year, hour, min, time, owner }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+        swal('Success', 'Ride added successfully', 'success');
       } else {
         swal('Success', 'Ride added successfully', 'success');
-        this.setState({ driver: '', rider: '',
-          origin: '', destination: '',
-          month: '', day: '', year: '',
-          hour: '', min: '', time: '',
+        this.setState({
           error: '', redirectToReferer: false });
       }
     });
   }
+
 
   /** Display the form. */
   render() {
@@ -104,9 +104,9 @@ class AddRides extends React.Component {
                 <Header as="h2" textAlign="center">
                   Offer A Ride
                 </Header>
-                <Form onSubmit={this.submit}>
+                <Form onSubmit={this.submit} >
                   <Segment stacked>
-                    <Form.Group widths='equal'>
+                    <Form.Group widths='equal' >
 
                     <Grid container columns='equal' >
                       <Grid.Column>
@@ -155,9 +155,19 @@ class AddRides extends React.Component {
                       : <Select fluid options={mins} placeholder='Min' onChange={this.handleChange}/>
                        <Select fluid options={times} placeholder='AM/PM' onChange={this.handleChange}/>
                     </Form.Group>
+                    <Form.Field label='Quantity' control='input' type='number' min={1} max={5} />
                     <Form.Button content="Submit"/>
                   </Segment>
                 </Form>
+                {this.state.error === '' ? (
+                    ''
+                ) : (
+                    <Message
+                        error
+                        header="Registration was not successful"
+                        content={this.state.error}
+                    />
+                )}
               </Grid.Column>
             </Grid>
           </Container>
