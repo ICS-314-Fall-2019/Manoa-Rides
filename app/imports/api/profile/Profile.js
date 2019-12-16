@@ -17,7 +17,6 @@ const ProfileSchema = new SimpleSchema({
     required: false,
   },
   Phone: String,
-  Email: String,
   Other: {
     type:String,
     defaultValue:'',

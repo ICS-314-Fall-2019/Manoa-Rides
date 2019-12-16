@@ -20,14 +20,38 @@ class AddProfile extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Divider hidden />
           <Header as='h1' textAlign='center'>Profile</Header>
-          <Grid.Row />
-          <Grid.Row>{this.props.currentUser}</Grid.Row>
-          <Grid.Row>
-            <Header as='h2' texttAlign='left'>Name: </Header>
-          </Grid.Row>
+          <Grid>
+            <Grid.Row></Grid.Row>
+            <Grid.Column width={8}>
+              column 1
+              <divider hidden/>
+              <Header padded as='h2' texttAlign='left'>Name: </Header>
+              <divider hidden/>
+              <Header as='h2' texttAlign='left'>Location: </Header>
+              <divider hidden/>
+
+              <Grid column={2}>
+                <Grid.Column width={3}>
+              <Header as='h2' texttAlign='left'>Email: </Header>
+                </Grid.Column>
+                <Grid.Column>
+                  <Header as='h3'>{this.props.currentUser}</Header>
+                </Grid.Column>
+              </Grid>
+
+              <divider hidden/>
+              <Header as='h2' texttAlign='left'>Other Contact </Header>
+
+              <divider hidden/>
+              <Header as='h2' texttAlign='left'>User Type </Header>
+
+            </Grid.Column>
+            <Grid.Column width={8}>column 2</Grid.Column>
+          </Grid>
           <Link to='/editProfile/:_id'><Button floated='right'>Edit</Button></Link>
+          <Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden /><Divider hidden />
+          <Header as='h2' texttAlign='left'>Ratings</Header>
         </Container>
     );
   }
@@ -41,6 +65,10 @@ AddProfile.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
+const AddProfileContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(AddProfile);
+
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
@@ -51,4 +79,4 @@ export default withTracker(({ match }) => {
     doc: Profiles.findOne(documentId),
     ready: subscription.ready(),
   };
-})(AddProfile);
+})(AddProfileContainer);

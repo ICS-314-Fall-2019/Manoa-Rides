@@ -25,7 +25,6 @@ let check = {
   Image: String,
   Ride: String,
   Phone: String,
-  Email: String,
   Other: String,
   UserType: String,
   Owner: String
@@ -140,7 +139,6 @@ class EditProfile extends React.Component {
               <Segment.Group>
                 <Segment>
                   <TextField name='Phone'/>
-                  <TextField name='Email'/>
                   <TextField name='Other'  placeholder='Other contact' required={0}/>
                 </Segment>
               </Segment.Group>
