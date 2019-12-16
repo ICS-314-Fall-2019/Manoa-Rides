@@ -1,13 +1,54 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com",
-      "firstName": "admin",
-      "lastName": "admin",
-      "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com",
-      "firstName": "John",
-      "lastName": "Doe",
-      "password": "changeme" }
+    { "email": "admin@foo.com", "firstName": "admin", "lastName": "admin","password": "changeme", "role": "admin" },
+
+    { "email": "john@foo.com", "firstName": "John", "lastName": "Doe", "password": "changeme" },
+    { "email": "philip@foo.com", "firstName": "Philip", "lastName": "Doe", "password": "changeme" },
+    { "email": "johnson@foo.com", "firstName": "Johnson", "lastName": "Doe", "password": "changeme" },
+    { "email": "henri@foo.com", "firstName": "Henri", "lastName": "Doe", "password": "changeme" },
+    { "email": "casanova@foo.com", "firstName": "Casanova", "lastName": "Doe", "password": "changeme" },
+
+    { "email": "kim@foo.com", "firstName": "Kim", "lastName": "Doe", "password": "changeme" },
+    { "email": "ron@foo.com", "firstName": "Ron", "lastName": "Doe", "password": "changeme" },
+    { "email": "amelia@foo.com", "firstName": "Amelia", "lastName": "Pond", "password": "changeme" },
+    { "email": "rory@foo.com", "firstName": "Rory", "lastName": "Williams", "password": "changeme" },
+    { "email": "smatt@foo.com", "firstName": "Matt", "lastName": "Smith", "password": "changeme" },
+
+    { "email": "kgillan@foo.com", "firstName": "Karen", "lastName": "Gillan", "password": "changeme" },
+    { "email": "adar@foo.com", "firstName": "Arthur", "lastName": "Darvill", "password": "changeme" },
+    { "email": "bpiper@foo.com", "firstName": "Billie", "lastName": "Piper", "password": "changeme" },
+    { "email": "rtyler@foo.com", "firstName": "Rose", "lastName": "Tyler", "password": "changeme" },
+    { "email": "donnan@foo.com", "firstName": "Donna", "lastName": "Noble", "password": "changeme" },
+
+    { "email": "rsong@foo.com", "firstName": "River", "lastName": "Song", "password": "changeme" },
+    { "email": "jackles@foo.com", "firstName": "Jensen", "lastName": "Ackles", "password": "changeme" },
+    { "email": "jpad@foo.com", "firstName": "Jared", "lastName": "Padalecki", "password": "changeme" },
+    { "email": "missacallin@foo.com", "firstName": "Misha", "lastName": "Collins", "password": "changeme" },
+    { "email": "dwin@foo.com", "firstName": "Dean", "lastName": "Winchester", "password": "changeme" },
+
+    { "email": "samsam@foo.com", "firstName": "Sam", "lastName": "Winchester", "password": "changeme" },
+    { "email": "sammywin@foo.com", "firstName": "Samantha", "lastName": "Winchester", "password": "changeme" },
+    { "email": "savior@foo.com", "firstName": "Castiel", "lastName": "Doe", "password": "changeme" },
+    { "email": "ayeplus@foo.com", "firstName": "Kevin", "lastName": "Tran", "password": "changeme" },
+    { "email": "oooood@foo.com", "firstName": "Ood", "lastName": "Doe", "password": "changeme" },
+
+    { "email": "exterminate@foo.com", "firstName": "Dalek", "lastName": "Exterminate", "password": "changeme" },
+    { "email": "philip@foo.com", "firstName": "", "lastName": "Doe", "password": "changeme" },
+    { "email": "danny@foo.com", "firstName": "Daenerys", "lastName": "Targaryen", "password": "changeme" },
+    { "email": "emmi@foo.com", "firstName": "Emilia", "lastName": "Clarke", "password": "changeme" },
+    { "email": "jsnow@foo.com", "firstName": "Jon", "lastName": "Snow", "password": "changeme" },
+
+    { "email": "astark@foo.com", "firstName": "Arya", "lastName": "Stark", "password": "changeme" },
+    { "email": "mylobster@foo.com", "firstName": "Phoebe", "lastName": "Buffay", "password": "changeme" },
+    { "email": "ohemgee@foo.com", "firstName": "Rachel", "lastName": "Green", "password": "changeme" },
+    { "email": "onabreak@foo.com", "firstName": "Ross", "lastName": "Geller", "password": "changeme" },
+    { "email": "seven@foo.com", "firstName": "Monica", "lastName": "Geller", "password": "changeme" },
+
+    { "email": "sarcastic@foo.com", "firstName": "Chandler", "lastName": "Bing", "password": "changeme" },
+    { "email": "howudoin@foo.com", "firstName": "Joey", "lastName": "Tribbiani", "password": "changeme" },
+    { "email": "zakzak@foo.com", "firstName": "Zakariyah", "lastName": "Carroll", "password": "changeme" },
+    { "email": "arees@foo.com", "firstName": "Anthony", "lastName": "Rees", "password": "changeme" },
+    { "email": "chrissyd@foo.com", "firstName": "Christy", "lastName": "Deacon", "password": "changeme" }
   ],
   "defaultRides" : [
     {
