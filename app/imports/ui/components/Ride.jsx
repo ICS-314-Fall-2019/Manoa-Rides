@@ -10,12 +10,12 @@ class Ride extends React.Component {
         <Card>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
-            <Card.Meta>{this.props.ride.date} at {this.props.ride.time}</Card.Meta>
+            <Card.Meta>{this.props.ride.date}</Card.Meta>
             <Card.Description>
               <a href= '#'>
               <strong>Driver:</strong> {this.props.ride.driver}
               </a><br />
-              <strong>Rider:</strong> TBD
+              <strong>Rider:</strong> {this.props.ride.rider}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>

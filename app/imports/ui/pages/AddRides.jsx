@@ -73,7 +73,7 @@ class AddRides extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
               <Segment >
                 <SelectField name='origin' placeholder='Select origin'/>
-                <SelectField name='destination' placeholder={Meteor.user().username}/>
+                <SelectField name='destination' placeholder='Select destination'/>
                 <DateField name='date'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
