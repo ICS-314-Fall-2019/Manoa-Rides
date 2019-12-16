@@ -1,5 +1,4 @@
 import React from 'react';
-import { Rides } from '/imports/api/ride/Rides';
 import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import HiddenField from 'uniforms-semantic/HiddenField';
@@ -11,6 +10,7 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
+import { Rides } from '../../api/ride/Rides';
 
 
 /** Create a schema to specify the structure of the data to appear in the form. */
@@ -44,7 +44,7 @@ const formSchema = new SimpleSchema({
 });
 
 /** Renders the Page for adding a document. */
-class AddRides extends React.Component {
+class AddRide extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -87,4 +87,4 @@ class AddRides extends React.Component {
   }
 }
 
-export default AddRides;
+export default AddRide;

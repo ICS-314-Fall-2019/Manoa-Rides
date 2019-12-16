@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Ride from '/imports/ui/components/Ride';
+import { Rides } from '../../api/ride/Rides';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListRides extends React.Component {
@@ -47,7 +47,7 @@ class ListRides extends React.Component {
         <Container>
           <Header as="h2" textAlign="center"> Available Rides</Header>
           <Card.Group>
-            {this.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
+            {this.props.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
           </Card.Group>
         </Container>
     );
@@ -56,16 +56,16 @@ class ListRides extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ListRides.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  rides: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Rides');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    rides: Rides.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListRides);

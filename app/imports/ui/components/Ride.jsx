@@ -3,7 +3,7 @@ import { Card, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single ride card. See pages/ListRides.jsx. */
 class Ride extends React.Component {
   render() {
     return (

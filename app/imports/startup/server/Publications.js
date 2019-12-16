@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
 import { Notes } from '../../api/note/Notes';
+import { Rides } from '../../api/ride/Rides';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
