@@ -16,11 +16,13 @@ class ListRides extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    let availRides = this.props.rides;
+    availRides = availRides.filter(a => a.driver !== Meteor.user().username);
     return (
         <Container>
           <Header as="h2" textAlign="center"> Available Rides</Header>
           <Card.Group>
-            {this.props.rides.map((ride, index) => <Ride key = {index} ride={ride}/>)}
+            {availRides.map((ride, index) => <Ride key = {index} ride={ride} />)}
           </Card.Group>
         </Container>
     );
