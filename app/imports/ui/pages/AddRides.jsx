@@ -50,7 +50,8 @@ class AddRide extends React.Component {
   submit(data, formRef) {
     const { rider, origin, destination, date } = data;
     const driver = Meteor.user().username;
-    Rides.insert({ driver, rider, origin, destination, date },
+    const driverId = Meteor.user()._id;
+    Rides.insert({ driver, driverId, rider, origin, destination, date },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
