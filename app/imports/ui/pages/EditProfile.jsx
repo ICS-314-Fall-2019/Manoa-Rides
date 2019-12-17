@@ -179,7 +179,10 @@ EditProfile.propTypes = {
   currentId: PropTypes.string,
 };
 
-
+const EditProfileContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+  currentId: Meteor.user() ? Meteor.user()._id : '',
+}))(EditProfile);
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
@@ -197,4 +200,4 @@ export default withTracker(({ match }) => {
     ),
     ready: subscription.ready(),
   };
-})(EditProfile);
+})(EditProfileContainer);

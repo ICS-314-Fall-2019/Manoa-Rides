@@ -60,6 +60,7 @@ class AddProfile extends React.Component {
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
 AddProfile.propTypes = {
   currentUser: PropTypes.string,
+  currentId: PropTypes.string,
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -67,6 +68,7 @@ AddProfile.propTypes = {
 
 const AddProfileContainer = withTracker(() => ({
   currentUser: Meteor.user() ? Meteor.user().username : '',
+  currentId: Meteor.user() ? Meteor.user()._id : '',
 }))(AddProfile);
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
