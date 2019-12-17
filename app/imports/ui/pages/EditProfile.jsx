@@ -160,7 +160,7 @@ class EditProfile extends React.Component {
               <SelectField name='UserType'/>
               <SubmitField value='Submit'/>
               <span>
-                    <Link to="/edit/:_id">Back to Profile</Link>
+                    <Link to={`/addprofile/${this.props.currentId}`} >Back to Profile</Link>
                   </span>
               <ErrorsField/>
             </AutoForm>
