@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
 import { Notes } from '../../api/note/Notes';
+import { Rides } from '../../api/ride/Rides';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
@@ -47,6 +48,14 @@ Meteor.publish('Notes', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Notes.find({ owner: username });
+  }
+  return this.ready();
+});
+
+/** This subscription publishes all rides regardless of user. */
+Meteor.publish('Rides', function publish() {
+  if (this.userId) {
+    return Rides.find();
   }
   return this.ready();
 });
