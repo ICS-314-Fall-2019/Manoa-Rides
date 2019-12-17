@@ -10,11 +10,12 @@ class Ride extends React.Component {
         <Card>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
-            <Card.Meta>{this.props.ride.date}</Card.Meta>
+            <Card.Meta>
+              {this.props.ride.date.toLocaleDateString('en-US')} at {this.props.ride.date.toLocaleTimeString('en-US')}
+            </Card.Meta>
             <Card.Description>
-              <a href= '#'>
               <strong>Driver:</strong> {this.props.ride.driver}
-              </a><br />
+              <br />
               <strong>Rider:</strong> {this.props.ride.rider}
             </Card.Description>
           </Card.Content>

@@ -51,3 +51,11 @@ Meteor.publish('Notes', function publish() {
   }
   return this.ready();
 });
+
+/** This subscription publishes all rides regardless of user. */
+Meteor.publish('Rides', function publish() {
+  if (this.userId) {
+    return Rides.find();
+  }
+  return this.ready();
+});

@@ -9,33 +9,6 @@ import { Rides } from '../../api/ride/Rides';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListRides extends React.Component {
 
-  rides = [{
-    driver: 'Philip', rider: 'Johnson',
-    origin: 'Hawaii Kai', destination: 'UH Manoa',
-    date: 1212, time: 600,
-  },
-    {
-      driver: 'Henri', rider: 'Casanova',
-      origin: 'Kailua', destination: 'UH Manoa',
-      date: 1222, time: 900,
-    },
-    {
-      driver: 'Kim', rider: 'Ron',
-      origin: 'UH Manoa', destination: 'Honolulu',
-      date: 1225, time: 1300,
-    },
-    {
-      driver: 'Henri', rider: 'Casanova',
-      origin: 'UH Manoa', destination: 'Kailua',
-      date: 1222, time: 1600,
-    },
-    {
-      driver: 'Kim', rider: 'Ron',
-      origin: 'UH Manoa', destination: 'Honolulu',
-      date: 1225, time: 1300,
-    },
-  ];
-
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
