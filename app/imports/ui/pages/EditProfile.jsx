@@ -21,8 +21,14 @@ import { Roles } from 'meteor/alanning:roles';
 const ProfileformSchema = new SimpleSchema({
   Name: String,
   Location: String,
+  Image: String,
+  Ride: {
+    type:String,
+    defaultValue:'',
+    optional: true,
+    required: false,
+  },
   Phone: String,
-  Email: String,
   Other: {
     type:String,
     defaultValue:'',
@@ -39,8 +45,9 @@ const ProfileformSchema = new SimpleSchema({
 let check = {
   Name: String,
   Location: String,
+  Image: String,
+  Ride: String,
   Phone: String,
-  Email: String,
   Other: String,
   UserType: String,
   Owner: String
@@ -71,8 +78,9 @@ class EditProfile extends React.Component {
     const {
       Name,
       Location,
+        Image,
+        Ride,
       Phone,
-      Email,
       Other,
       UserType
     } = data;
@@ -103,7 +111,6 @@ class EditProfile extends React.Component {
               Name,
               Location,
               Phone,
-              Email,
               Other,
               UserType
             }
@@ -118,8 +125,9 @@ class EditProfile extends React.Component {
           {
             Name,
             Location,
+            Image,
+            Ride,
             Phone,
-            Email,
             Other,
             UserType,
             Owner
@@ -149,11 +157,12 @@ class EditProfile extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} model={this.props.check}>
               <TextField name='Name' placeholder='Write your First and Last Name'/>
               <TextField name='Location' placeholder='Home city'/>
+              <TextField name='Image' placeholder='Add URL for profile image...'/>
+              <TextField name='Ride' placeholder='Add URL for car image...'/>
               <bold>Contact Information</bold>
               <Segment.Group>
                 <Segment>
                   <TextField name='Phone'/>
-                  <TextField name='Email'/>
                   <TextField name='Other'  placeholder='Other contact' required={0}/>
                 </Segment>
               </Segment.Group>
