@@ -8,7 +8,6 @@ const Rides = new Mongo.Collection('Rides');
 /** Define a schema to specify the structure of each document in the Notes. */
 const RidesSchema = new SimpleSchema({
   driver: String,
-  driverId: String,
   rider: String,
   origin: {
     type: String,

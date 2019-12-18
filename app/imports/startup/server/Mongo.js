@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profile.js';
+import { Rides } from '../../api/ride/Rides';
 
 /* eslint-disable no-console */
 
@@ -32,3 +33,18 @@ if (Profiles.find().count() === 0) {
 }
 
 /** END Profile Stuff */
+
+/** START Ride Stuff */
+function addRide(data) {
+  console.log(`  Adding: Ride from ${data.driver} `);
+  Rides.insert(data);
+}
+
+if (Rides.find().count() === 0) {
+  if (Meteor.settings.defaultRides) {
+    console.log('Creating default rides.');
+    Meteor.settings.defaultRides.map(data => addRide(data));
+  }
+}
+
+/** END Ride Stuff */

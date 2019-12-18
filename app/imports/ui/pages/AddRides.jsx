@@ -50,8 +50,7 @@ class AddRide extends React.Component {
   submit(data, formRef) {
     const { rider, origin, destination, date } = data;
     const driver = Meteor.user().username;
-    const driverId = Meteor.user()._id;
-    Rides.insert({ driver, driverId, rider, origin, destination, date },
+    Rides.insert({ driver, rider, origin, destination, date },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -78,7 +77,7 @@ class AddRide extends React.Component {
                 <DateField name='date'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='rider' value='TBH'/>
+                <HiddenField name='rider' value='TBD'/>
               </Segment>
             </AutoForm>
           </Grid.Column>

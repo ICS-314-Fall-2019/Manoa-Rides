@@ -17,6 +17,9 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import AddRides from '../pages/AddRides';
+import ActiveRides from '../pages/ActiveRides';
+import UserDrive from '../pages/UserDrive';
+import UserRide from '../pages/UserRide';
 import ForgotPassword from '../pages/ForgotPassword';
 
 
@@ -32,6 +35,9 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/forgot" component={ForgotPassword}/>
+              <ProtectedRoute path="/listMyRides" component={ActiveRides}/>
+              <ProtectedRoute path="/imDriving" component={UserDrive}/>
+              <ProtectedRoute path="/imRiding" component={UserRide}/>
               <ProtectedRoute path="/list" component={ListRides}/>
               <ProtectedRoute path="/add" component={AddRides}/>
               <ProtectedRoute path="/addProfile/:_id" component={AddProfile}/>

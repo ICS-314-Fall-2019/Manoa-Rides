@@ -1,13 +1,26 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+
+/* PROFILE NOT IMPLEMENTED YET
+          <Card.Content extra>
+            <div className='ui two buttons'>
+              <Button basic color='green'>
+              Take this ride!
+            </Button>
+              <Button basic color='blue'>
+                Driver Info.
+              </Button>
+            </div>
+          </Card.Content>
+          */
 /** Renders a single ride card. See pages/ListRides.jsx. */
 class Ride extends React.Component {
   render() {
     return (
-        <Card>
+        <Card centered>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
             <Card.Meta>
@@ -18,16 +31,6 @@ class Ride extends React.Component {
               <br />
               <strong>Rider:</strong> {this.props.ride.rider}
             </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <div className='ui two buttons'>
-              <Button basic color='green'>
-              Take this ride!
-            </Button>
-              <Button basic color='blue'>
-                Driver Info.
-              </Button>
-            </div>
           </Card.Content>
         </Card>
     );
