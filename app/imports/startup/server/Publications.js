@@ -26,7 +26,7 @@ Meteor.publish('StuffAdmin', function publish() {
 /** START OF PROFILE STUFF */
 Meteor.publish('Profiles', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
+    const username = Meteor.users.findOne(this.userId)._id;
     return Profiles.find({ Owner: username });
   }
   return this.ready();
