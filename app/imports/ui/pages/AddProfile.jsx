@@ -26,7 +26,9 @@ class AddProfile extends React.Component {
             <Grid.Column width={8}>
               column 1
               <divider hidden/>
-              <Header padded as='h2' texttAlign='left'>Name: </Header>
+              <Header padded as='h2' texttAlign='left'>Name: </Header>                  <Header as='h3'>{this.props.currentUser}</Header>
+              <Header as='h3'>{this.props.currentFirstName}</Header>
+
               <divider hidden/>
               <Header as='h2' texttAlign='left'>Location: </Header>
               <divider hidden/>
@@ -61,6 +63,7 @@ class AddProfile extends React.Component {
 AddProfile.propTypes = {
   currentUser: PropTypes.string,
   currentId: PropTypes.string,
+  currentFirstName: PropTypes.string,
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -69,6 +72,7 @@ AddProfile.propTypes = {
 const AddProfileContainer = withTracker(() => ({
   currentUser: Meteor.user() ? Meteor.user().username : '',
   currentId: Meteor.user() ? Meteor.user()._id : '',
+  currentfirstName: Meteor.user() ? Meteor.user().firstName: '',
 }))(AddProfile);
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
