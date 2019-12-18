@@ -7,7 +7,10 @@
   background: url('images/signUpBackground.png') no-repeat center center fixed;
   background-size: cover;
 }
-
+.listBackground{
+  background: url('images/signUpBackground.png') no-repeat center center fixed;
+  background-size: cover;
+}
 .sign-in-background {
   background: url('images/hawaii-beach.jpg') no-repeat center center fixed;
   background-size: cover;
