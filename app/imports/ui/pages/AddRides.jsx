@@ -78,7 +78,7 @@ class AddRide extends React.Component {
                 <DateField name='date'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='rider' value='TBH'/>
+                <HiddenField name='rider' value='TBD'/>
               </Segment>
             </AutoForm>
           </Grid.Column>

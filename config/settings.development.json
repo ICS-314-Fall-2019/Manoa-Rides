@@ -49,6 +49,33 @@
     { "email": "zakzak@foo.com", "firstName": "Zakariyah", "lastName": "Carroll", "password": "changeme" },
     { "email": "arees@foo.com", "firstName": "Anthony", "lastName": "Rees", "password": "changeme" },
     { "email": "chrissyd@foo.com", "firstName": "Christy", "lastName": "Deacon", "password": "changeme" }
+  ],
+  "defaultRides" : [
+    {
+      "driver": "chrissyd@foo.com", "rider": "danny@foo.com",
+      "origin": "Hawaii Kai", "destination": "University of Hawaii Manoa",
+      "date": "2019-12-20T16:04:00Z"
+    },
+    {
+      "driver": "danny@foo.com", "rider": "chrissyd@foo.com",
+      "origin": "Kailua", "destination": "University of Hawaii Manoa",
+      "date": "2019-12-20T16:04:00Z"
+    },
+    {
+      "driver": "danny@foo.com", "rider": "chrissyd@foo.com",
+      "origin": "University of Hawaii Manoa", "destination": "Honolulu",
+      "date": "2019-12-20T16:04:00Z"
+    },
+    {
+      "driver": "chrissyd@foo.com", "rider": "danny@foo.com",
+      "origin": "University of Hawaii Manoa", "destination": "Kailua",
+      "date": "2019-12-20T16:04:00Z"
+    },
+    {
+      "driver": "john@foo.com", "rider": "danny@foo.com",
+      "origin": "University of Hawaii Manoa", "destination": "Honolulu",
+      "date": "2019-12-20T16:04:00Z"
+    }
   ]
 }
 
