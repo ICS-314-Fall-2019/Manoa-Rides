@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 class Ride extends React.Component {
   render() {
     return (
-        <Card>
+        <Card centered>
           <Card.Content>
             <Card.Header>{this.props.ride.origin} to {this.props.ride.destination}</Card.Header>
             <Card.Meta>

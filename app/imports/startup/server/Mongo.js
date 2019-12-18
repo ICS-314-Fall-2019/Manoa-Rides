@@ -36,7 +36,7 @@ if (Profiles.find().count() === 0) {
 
 /** START Ride Stuff */
 function addRide(data) {
-  console.log(`  Adding: ${data.driver} `);
+  console.log(`  Adding: Ride from ${data.driver} `);
   Rides.insert(data);
 }
 

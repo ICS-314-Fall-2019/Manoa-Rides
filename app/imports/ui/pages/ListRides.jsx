@@ -40,7 +40,7 @@ class ListRides extends React.Component {
     let availRides = this.props.rides;
     availRides = availRides.filter(a => ((a.origin.toLowerCase().indexOf(this.state.search.toLowerCase())) !== -1 ||
         (a.destination.toLowerCase().indexOf(this.state.search.toLowerCase())) !== -1)
-        && (a.driver !== Meteor.user().username));
+        && (a.driver !== Meteor.user().username) && (a.rider === 'TBD'));
 
     return (
         <Container>
