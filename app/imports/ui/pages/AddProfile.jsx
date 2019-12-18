@@ -149,8 +149,9 @@ class AddProfile extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Profile</Header>
+            <Header as="h1" textAlign="center" inverted>Profile</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={ProfileformSchema} onSubmit={data => this.submit(data, fRef)} model={this.props.check}>
+              <Segment>
               <TextField name='Name' placeholder='Write your First and Last Name.'/>
               <TextField name='Location'/>
               <bold>Contact Information</bold>
@@ -163,6 +164,7 @@ class AddProfile extends React.Component {
               </Segment.Group>
               <SelectField name='UserType'/>
               <SubmitField value='Submit'/>
+              </Segment>
               <ErrorsField/>
             </AutoForm>
           </Grid.Column>
