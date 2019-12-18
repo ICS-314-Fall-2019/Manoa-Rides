@@ -8,20 +8,35 @@ const Rides = new Mongo.Collection('Rides');
 /** Define a schema to specify the structure of each document in the Notes. */
 const RidesSchema = new SimpleSchema({
   driver: String,
+  driverId: String,
   rider: String,
-  origin: String,
-  destination: String,
-  month: {
-    type: Number,
-    allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12],
-  },
-  day: Number,
-  year: Number,
-  time: {
+  origin: {
     type: String,
-    allowedValues: ['AM', 'PM'],
+    allowedValues: [
+      'Aiea', 'Ewa Beach', 'Hale`iwa', 'Hau`ula',
+      'Hawaii Kai', 'Honolulu', 'Ka`a`awa', 'Kahala',
+      'Kahuku', 'Kailua', 'Kane`ohe', 'Kapolei',
+      'La`ie', 'Lanikai', 'Ma`ili', 'Makaha',
+      'Manoa', 'Mililani', 'Nanakuli', 'Pearl City',
+      'University of Hawaii Manoa', 'Wahiawa', 'Waialua',
+      'Wai`anae', 'Waikiki', 'Waimanalo', 'Waipahu',
+    ],
   },
+  destination: {
+    type: String,
+    allowedValues: [
+      'Aiea', 'Ewa Beach', 'Hale`iwa', 'Hau`ula',
+      'Hawaii Kai', 'Honolulu', 'Ka`a`awa', 'Kahala',
+      'Kahuku', 'Kailua', 'Kane`ohe', 'Kapolei',
+      'La`ie', 'Lanikai', 'Ma`ili', 'Makaha',
+      'Manoa', 'Mililani', 'Nanakuli', 'Pearl City',
+      'University of Hawaii Manoa', 'Wahiawa', 'Waialua',
+      'Wai`anae', 'Waikiki', 'Waimanalo', 'Waipahu',
+    ],
+  },
+  date: Date,
 }, { tracker: Tracker });
+
 
 /** Attach this schema to the Notes. */
 Rides.attachSchema(RidesSchema);

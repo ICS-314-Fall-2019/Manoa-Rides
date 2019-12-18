@@ -25,10 +25,12 @@ class NavBar extends React.Component {
                   <Dropdown.Item text="Im the rider" as={NavLink} exact to="/riding"/>
                 </Dropdown.Menu>
               </Dropdown>,
-                <Menu.Item position="left" as={NavLink} activeclassname="active" exact to="/add" key='add'>
+
+                <Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/add/" key='add'>
               <Icon name='plus square outline' size='large'/>Create Ride</Menu.Item>,
-              <Menu.Item position="left" as={NavLink} activeclassname="active" exact to="/list" key='list'>
-                <Icon name='car' size='large'/>Available Rides</Menu.Item>
+              <Menu.Item position="left" as={NavLink} activeClassName="active" exact to="/list" key='list'>
+                <Icon name='car' size='large'/>Available Rides</Menu.Item>,
+
             ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
