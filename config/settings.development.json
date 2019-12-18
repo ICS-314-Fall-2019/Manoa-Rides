@@ -1,12 +1,10 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com",
-      "firstName": "admin",
-      "lastName": "admin",
+      "name": "admin",
       "password": "changeme", "role": "admin" },
     { "email": "john@foo.com",
-      "firstName": "John",
-      "lastName": "Doe",
+      "name": "John Doe",
       "password": "changeme" }
   ],
   "defaultRides" : [

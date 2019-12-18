@@ -27,6 +27,7 @@ class AddProfile extends React.Component {
               column 1
               <divider hidden/>
               <Header padded as='h2' texttAlign='left'>Name: </Header>
+              <Header as='h3'>{this.props.currentName}</Header>
               <divider hidden/>
               <Header as='h2' texttAlign='left'>Location: </Header>
               <divider hidden/>
@@ -59,6 +60,7 @@ class AddProfile extends React.Component {
 
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
 AddProfile.propTypes = {
+  currentName: PropTypes.string,
   currentUser: PropTypes.string,
   currentId: PropTypes.string,
   doc: PropTypes.object,
@@ -68,6 +70,7 @@ AddProfile.propTypes = {
 
 const AddProfileContainer = withTracker(() => ({
   currentUser: Meteor.user() ? Meteor.user().username : '',
+  currentName: Meteor.user() ? Meteor.user().name : '',
   currentId: Meteor.user() ? Meteor.user()._id : '',
 }))(AddProfile);
 
